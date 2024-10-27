@@ -5,7 +5,7 @@ Ejercicios de Programación en lenguaje C
 
 ## Copilador C
 
-~~Copilador TCC (tiny c compiler)~~ Tiene bugazos importantes. Copilaba incorrectamente el ejercicio ud1/EP0132.c.
+~~Copilador TCC (tiny c compiler)~~ Tiene bugazos importantes. Copilaba incorrectamente el ejercicio ud1/EP0132.c.<br />
 GCC (GNU Compiler Collection)
 
 
