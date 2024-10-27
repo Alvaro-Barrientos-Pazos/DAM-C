@@ -5,17 +5,23 @@ Ejercicios de Programación en lenguaje C
 
 ## Copilador C
 
-~~Copilador TCC (tiny c compiler)~~ Tiene bugazos importantes. Copilaba incorrectamente el ejercicio ud1/EP0132.c.
+~~Copilador TCC (tiny c compiler)~~ Tiene bugazos importantes. Copilaba incorrectamente el ejercicio ud1/EP0132.c.<br />
 GCC (GNU Compiler Collection)
 
 
 ## Caracteres UTF-8 en la terminal
+
+### Windows
 
 Para mostrar los caracteres UTF-8 correctamente como ñ o € fue necesario cambiar la consola del visual studio code a powershell y ejecutar un comando:<br />
 - Paso 1: Pulsa `F1`
 - Paso 2: Selecciona/escribe `Terminal: Select Default Profile`
 - Paso 3: Selecciona/escribe `PowerShell`
 - Paso 4: Ejecuta el siguiente commando en la terminal:<br /> `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8`
+
+### Linux
+
+La terminal por defecto ya interpreta los caracteres UTF-8.
 
 
 ## Estructura del repositorio

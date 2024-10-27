@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [ 
         {
+            //\\// WINDOWS \\//\\
             "name": "C/C++: Launch .exe",
             "type": "cppdbg",
             "request": "launch",
@@ -12,9 +13,21 @@
             "cwd": "${fileDirname}",
             "args": [],
             "externalConsole": false,
-            "preLaunchTask": "build", // Este parametro debe tener el mismo valor que el parametro "label" en la tarea del archivo tasks.json
+            "preLaunchTask": "build (Windows)", // Este parametro debe tener el mismo valor que el parametro "label" en la tarea del archivo tasks.json
             "miDebuggerPath": "C:\\Program Files\\w64devkit\\bin\\gdb.exe"
 
+        },
+        {
+            //\\// UBUNTU \\//\\
+            "name": "C/C++: Launch (Ubuntu)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            "cwd": "${fileDirname}",
+            "args": [],
+            "externalConsole": false,
+            "preLaunchTask": "build (Ubuntu)", // Este parametro debe tener el mismo valor que el parametro "label" en la tarea del archivo tasks.json
+            "miDebuggerPath": "/usr/bin/gdb"
         }
         
     ],
