@@ -23,7 +23,7 @@ int main() {
 
     int diff = n-(m%n);
 
-    char *output = diff == n ? "%u es ": "%u necesita sumar %u ser ";
+    char *output = (diff == n) ? "%u es ": "%u necesita sumar %u ser ";
     
     printf(output, m, diff);
     printf("múltiplo de %u",n);
