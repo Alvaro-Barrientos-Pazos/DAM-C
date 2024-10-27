@@ -1,18 +1,12 @@
 /*
-Pedir una nota entera de 0 a 10 y mostrarla de la siguiente forma: 
+    Pedir una nota entera de 0 a 10 y mostrarla de la siguiente forma: 
     insuficiente (de 0 a 4), suficiente (5), bien (6), notable (7 y 8) y sobresaliente (9 y 10).
-
 */
 
-package ud2.ejercicios;
+#include <stdio.h>
+#include <math.h>
 
-import java.util.Scanner;
-
-public class E0210 {
-
-    public static void main(String[] args) {
-        
-        Scanner sc = new Scanner(System.in);
+int main() {  
 
         System.out.print("Introduce un número entero (de 0 a 10): ");
         int nota = sc.nextInt();

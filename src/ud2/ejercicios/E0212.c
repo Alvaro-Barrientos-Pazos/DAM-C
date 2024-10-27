@@ -5,15 +5,10 @@ Hay que tener en cuenta que existen meses con 28, 30 y 31 días
 
 */
 
-package ud2.ejercicios;
+#include <stdio.h>
+#include <math.h>
 
-import java.util.Scanner;
-
-public class E0212 {
-
-    public static void main(String[] args) {
-        
-        Scanner sc = new Scanner(System.in);
+int main() {  
         System.out.print("Introduce un el día de la fecha: ");
         byte dia = sc.nextByte();
 
