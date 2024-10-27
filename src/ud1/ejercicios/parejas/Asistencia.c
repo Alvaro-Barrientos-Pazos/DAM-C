@@ -21,7 +21,7 @@ int main() {
         printf("Número de faltas sin justificar que implican una pérdida de la evaluación continua: %.0lf\n",evLost);
 
         char *consecuencias = (faltas<=warning) ? "Ningún problema": 
-                                (faltas<=evLost) ? "Apercibimiento" : "Pérdida de evaluación continua";
+                              (faltas<=evLost) ? "Apercibimiento" : "Pérdida de evaluación continua";
         
         printf(consecuencias);
 

@@ -36,5 +36,5 @@ int main() {
             : m2 * FEET_M2;
 
 
-    printf("%.2lf%s son %.2lf%s\n", qOrigin, unitShortNames[unitIdOrigin], qTarget, unitShortNames[unitIdTarget]);
+    printf("%.2f%s son %.2f%s\n", qOrigin, unitShortNames[unitIdOrigin], qTarget, unitShortNames[unitIdTarget]);
 }
