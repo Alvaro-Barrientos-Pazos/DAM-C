@@ -1,6 +1,6 @@
 /*
-Pedir los coeficientes de una ecuación de segundo grado y mostrar sus 
-soluciones reales. 
+    Pedir los coeficientes de una ecuación de segundo grado y mostrar sus 
+    soluciones reales. 
 
     (ax² + bx + c = 0) 
 
@@ -9,7 +9,6 @@ soluciones reales.
 */
 
 #include <stdio.h>
-#include <math.h>
 
 int main() {  
 

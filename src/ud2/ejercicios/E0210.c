@@ -4,38 +4,43 @@
 */
 
 #include <stdio.h>
-#include <math.h>
 
 int main() {  
 
-        System.out.print("Introduce un número entero (de 0 a 10): ");
-        int nota = sc.nextInt();
-        sc.close();
-        
-        switch (nota) {
-            case 0,1,2,3,4:
-                System.out.println("Insuficiente");
-                break;
-        
-            case 5: 
-                System.out.println("Suficiente");
-                break;
-            
-            case 6:
-                System.out.println("Bien");
-                break;
-            
-            case 7,8:
-                System.out.println("Notable");
-                break;
+    unsigned int score;
 
-            case 9,10:
-                System.out.println("Notable");
-                break;
+    printf("Introduce un número entero (de 0 a 10): ");
+    scanf("%u",&score);
+    
+    switch (score) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            printf("Insuficiente");
+            break;
+    
+        case 5: 
+            printf("Suficiente");
+            break;
+        
+        case 6:
+            printf("Bien");
+            break;
+        
+        case 7:
+        case 8:
+            printf("Notable");
+            break;
 
-            default:
-                System.out.println("La nota es invalida");
-                break;
-        }
+        case 9:
+        case 10:
+            printf("Sobresaliente");
+            break;
+
+        default:
+            printf("La nota es invalida");
+            break;
     }
 }

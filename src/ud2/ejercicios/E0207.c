@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 int main() {  
+    
     double n1;
     double n2;
     double n3;

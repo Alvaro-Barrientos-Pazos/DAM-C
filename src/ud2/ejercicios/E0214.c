@@ -4,7 +4,6 @@
 */
 
 #include <stdio.h>
-#include <math.h>
 
 int main() {  
     
@@ -20,9 +19,9 @@ int main() {
     scanf("%u",&year);
 
     // Datos modificados
-    int mDay  = day+1;
-    int mMes  = month;
-    int mYear = year;
+    int mDay   = day+1;
+    int mMonth = month;
+    int mYear  = year;
 
     unsigned char bisiesto = 0;
     
@@ -39,9 +38,8 @@ int main() {
             case 2:
                 if ((mDay > 28 && !bisiesto) || (mDay>29 && bisiesto)){
                     mDay = 1;
-                    mMes++;
+                    mMonth++;
                 }
-
 
             case 4:
             case 6:
@@ -53,7 +51,7 @@ int main() {
                         break;
                     }
                     mDay = 1;
-                    mMes++;
+                    mMonth++;
                 }
                 
             case 1:
@@ -65,16 +63,16 @@ int main() {
             case 12:
                 if (mDay > 31){
                     mDay = 1;
-                    mMes++;
+                    mMonth++;
                     
-                    if (mMes > 12){
+                    if (mMonth > 12){
                         mYear++;
-                        mMes = 1;
+                        mMonth = 1;
                     }
                 }
                 
             default:
-                printf("El día siguiente a %d / %d / %d sería: %d / %d / %d \n",day,month,year,mDay,mMes,mYear);
+                printf("El día siguiente a %d / %d / %d sería: %d / %d / %d \n",day,month,year,mDay,mMonth,mYear);
                 break;
         }
     }

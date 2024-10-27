@@ -1,52 +1,49 @@
 /*
-Pedir el día, mes y año de una fecha e indicar si la fecha es correcta. 
-Hay que tener en cuenta que existen meses con 28, 30 y 31 días 
-(no se considerarán los años bisiestos).
-
+    Pedir el día, mes y año de una fecha e indicar si la fecha es correcta. 
+    Hay que tener en cuenta que existen meses con 28, 30 y 31 días 
+    (no se considerarán los años bisiestos).
 */
 
 #include <stdio.h>
-#include <math.h>
 
 int main() {  
-        System.out.print("Introduce un el día de la fecha: ");
-        byte dia = sc.nextByte();
 
-        System.out.print("Introduce un el mes de la fecha: ");
-        byte mes = sc.nextByte();
+    unsigned char day, month;
+    unsigned int year;
 
-        System.out.print("Introduce un el año de la fecha: ");
-        int anho = sc.nextInt();
-        sc.close();
+    printf("Introduce un el día de la fecha: ");
+    scanf("%hhu",&day);
 
-        String mensaje = "La fecha %d/%d/%d es ";
+    printf("Introduce un el mes de la fecha: ");
+    scanf("%hhu",&month);
 
-        if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || anho < 1 ){
-            mensaje+="invalida";
-        }
-        else{
-            switch (mes) {         
-                case 2:
-                    if (dia > 28){
-                        mensaje+="invalido"; 
-                        break;
-                    }
-    
-                case 4,6,9,11:
-                    if (dia > 30){
-                        mensaje+="invalido"; 
-                        break;
-                    }
-                
-                default:
-                    mensaje+="valida";
-                    break;
-            }
-        }
-        
-        System.out.printf(mensaje,dia,mes,anho);
-        
+    printf("Introduce un el año de la fecha: ");
+    scanf("%u",&year);
 
-             
+    char *validation = "valida";
+
+    if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1 ){
+        validation = "invalida";
     }
+    else{
+        switch (month) {         
+            case 2:
+                if (day > 28){
+                    validation = "invalido"; 
+                    break;
+                }
+
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                if (day > 30){
+                    validation = "invalido"; 
+                    break;
+                }
+        }
+    }
+    
+    printf("La fecha %d/%d/%d es %s",day,month,year,validation);
+            
 }

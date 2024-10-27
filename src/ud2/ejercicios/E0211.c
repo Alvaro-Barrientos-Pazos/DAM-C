@@ -4,47 +4,48 @@
 */
 
 #include <stdio.h>
-#include <math.h>
 
 int main() {  
-        System.out.print("Introduce un número entero entre 1 y 7: ");
-
-        int diaIndex = sc.nextInt();
-
-        switch (diaIndex) {
-            case 1:
-                System.out.println("Lunes");                
-                break;
         
-            case 2:
-                System.out.println("Martes");                
-                break;
+    unsigned char dayIndex;
+    
+    printf("Introduce un número entero entre 1 y 7: ");
+    scanf("%hhu",dayIndex);
+    
 
-            case 3:
-                System.out.println("Miercoles");                
-                break;
+    switch (dayIndex) {
+        case 1:
+            printf("Lunes");                
+            break;
+    
+        case 2:
+            printf("Martes");                
+            break;
 
-            case 4:
-                System.out.println("Jueves");                
-                break;
+        case 3:
+            printf("Miercoles");                
+            break;
 
-            case 5:
-                System.out.println("Viernes");                
-                break;
+        case 4:
+            printf("Jueves");                
+            break;
 
-            case 6:
-                System.out.println("Sabado");                
-                break;
+        case 5:
+            printf("Viernes");                
+            break;
 
-            case 7:
-                System.out.println("Domingo");                
-                break;
+        case 6:
+            printf("Sabado");                
+            break;
 
-            default:
-                System.out.println("Número invalido");    
-                break;
+        case 7:
+            printf("Domingo");                
+            break;
 
-        }
+        default:
+            printf("Número invalido");    
+            break;
 
     }
+
 }

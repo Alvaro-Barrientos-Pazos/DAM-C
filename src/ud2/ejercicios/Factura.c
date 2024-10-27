@@ -1,48 +1,39 @@
 /*
-Escribe un programa para emitir la factura de compra de un producto, introduciendo el precio 
-del producto y el número de unidades compradas. La factura deberá añadir al total un IVA 
-(Impuesto del Valor Añadido) del 21%. Si el precio final con IVA es superior a 100 euros 
-se aplicará un descuento del 5%.
+    Escribe un programa para emitir la factura de compra de un producto, introduciendo el precio 
+    del producto y el número de unidades compradas. La factura deberá añadir al total un IVA 
+    (Impuesto del Valor Añadido) del 21%. Si el precio final con IVA es superior a 100 euros 
+    se aplicará un descuento del 5%.
 
     Ejemplos para pruebas:
-    Precio = 10 €, Unidades = 5 => Precio Final = 60,50 €
-    Precio = 20 €, Unidades = 7 => Precio Final = 160,93 €
+    Precio = 10 €, Unidades = 5 => Precio final = 60,50 €
+    Precio = 20 €, Unidades = 7 => Precio final = 160,93 €
 
- */
-package ud2.ejercicios;
+*/
 
-import java.util.Scanner;
+#include <stdio.h>
 
-public class Factura {
-    public static void main(String[] args) {
-        final double IVA       = 0.21;
-        final int    THRESHOLD = 100;
-        final double DISCOUNT  = 0.05;
+int main() {  
+    const double IVA       = 0.21;
+    const int    THRESHOLD = 100;
+    const double DISCOUNT  = 0.05;
 
-        Scanner sc = new Scanner(System.in);
+    unsigned int nItem;
 
+    double rPrice; // Precio sin impuestos Añadidos
 
-        System.out.println("Introduce el número de productos comprados");
-        int nItem = sc.nextInt();
+    printf("Introduce el número de productos comprados: ");
+    scanf("%u",&nItem);
 
-        System.out.println("Introduce el precio");
-        double tPrecio = sc.nextDouble(); // Precio sin impuestos
-        sc.close();
+    printf("Introduce el precio del producto: ");
+    scanf("%lf",&rPrice);
+    
+    // Precio con impuestos Añadidos
+    double tPrice = (nItem * rPrice) * (1+IVA);
 
-        
-        // Precio con impuestos Añadidos
-        double iPrecio = (nItem * tPrecio) * (1+IVA);
+    printf("\nEl precio con impuesto es de: %.2f€\n",tPrice);
 
-        String mensaje = "";
-
-        if (iPrecio > THRESHOLD){
-            tPrecio = iPrecio * (1-DISCOUNT);
-            mensaje = String.format("\nPero se ha aplicado un descuento!!\nEl precio final es: %.2f euros",tPrecio);
-        }
-        
-        System.out.printf("\nEl precio con impuesto es de: %.2f euros %s\n",iPrecio,mensaje);
-
-        
-
+    if (tPrice > THRESHOLD){
+        printf("\nPero se ha aplicado un descuento!!\nEl precio final es: %.2f€",tPrice * (1-DISCOUNT));
     }
+
 }

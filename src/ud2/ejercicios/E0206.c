@@ -2,7 +2,6 @@
     Solicitar dos números y mostrar cuál es el mayor o si son iguales
 */
 
-
 #include <stdio.h>
 
 int main() {  
