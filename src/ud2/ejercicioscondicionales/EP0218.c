@@ -6,56 +6,67 @@ Amplía el programa anterior para que muestre el número de segundos que el usua
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int main() {  
+int main() {
 
-    long msStart = System.currentTimeMillis(); // Hora en milisegundos del comienzo del programa
-    long msEnd;                                // Hora en milisegundos de la finalizacion del programa
+    const unsigned char MAX = 99;
+    const unsigned char MIN = 1;
+    const unsigned char N_OPERATORS = 3;
 
-    final byte MAX = 99;
-    final byte MIN = 1;
-    final byte N_OPERATORS = 3;
+    // Para guardar el tiempo en el cual empezamos a contar y el de finalizado creamos una struct del tipo timespec, estas estructuras tienen sus propias variables llamadas miembros:
+    // tv_sec:  Numero de segundos
+    // tv_nsec: Numero de nanosegundos
+    //
+    // Nosotros necesitamos dos estructuras una para el comienzo y otra para el final y luego podemos acceder a sus miembros con la siguiente syntaxis:
+    // 'start.tv_sec' o 'start.tv_nsec'
+    // 'end.tv_sec' o 'end.tv_nsec'
+    struct timespec start, end;
+    // Esta funcion devuelve un valor, dependiendo de los argumentos y lo guarda en el puntero:
+    // - CLOCK_MONOTONIC: Usa el tiempo que lleva el equipo encendido y siempre es un valor ascendente y constante
+    // - CLOCK_REALTIME: Usa la hora del sistema, la cual puede cambiarse a una fecha en el pasado, por lo que no es ideal para contar el tiempo.
+    clock_gettime(CLOCK_MONOTONIC, &start);
 
-    Scanner sc = new Scanner(System.in);
+    srand(time(NULL));
 
-    int a = (int) (Math.random() * MAX ) + MIN;
-    int b = (int) (Math.random() * MAX ) + MIN;
-    int operator = (int) (Math.random() * N_OPERATORS) + 1;
+    unsigned char a = (rand() % MAX) + MIN;
+    unsigned char b = (rand() % MAX) + MIN;
+    unsigned char operator = (rand() % N_OPERATORS) + 1;
     int result = -1;
-
     char cOperator = '+';
 
     switch (operator) {
         case 1:
             result = a + b;
             break;
-
         case 2:
             cOperator = '-';
             result = a - b;
             break;
-
         case 3:
             cOperator = '*';
             result = a * b;
             break;
     }
 
-    System.out.printf("Cual es el resultado de %d %c %d?\n", a, cOperator, b);
-    int input = sc.nextInt();
-
-    msEnd = System.currentTimeMillis();
-
-
-    final int S_MINUTES = 60;    // Segundos en un minuto
-    final int S_HOUR    = S_MINUTES * S_MINUTES; // Segundos en una hora
+    printf("¿Cuál es el resultado de %d %c %d?\n", a, cOperator, b);
     
+    int input;
+    scanf("%d", &input);
 
-    int seconds = (int)(msEnd-msStart) / 1000 ;
-    int minutes = seconds % S_HOUR/S_MINUTES;
-    int hours   = seconds / S_HOUR;
-    seconds     = seconds % S_MINUTES;
+    // Volvemos a llamar a la funcion para guardar el momento en el que el usuario introduce el resultado.
+    clock_gettime(CLOCK_MONOTONIC, &end);
 
-    System.out.printf("%s [%02d:%02d:%02d]\n",input == result ? "Correcto": "Incorrecto",hours,minutes,seconds);
+    long seconds = end.tv_sec - start.tv_sec;
+
+    const int S_MINUTES = 60;
+    const int S_HOUR = S_MINUTES * S_MINUTES;
+
+    int minutes = (seconds % S_HOUR) / S_MINUTES;
+    int hours = seconds / S_HOUR;
+    int secondsRemaining = seconds % S_MINUTES;
+
+    printf("%s [%02d:%02d:%02d]\n", input == result ? "Correcto" : "Incorrecto", hours, minutes, secondsRemaining);
 
 }

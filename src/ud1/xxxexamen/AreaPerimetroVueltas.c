@@ -19,11 +19,10 @@
 
 // Para usar la constante PI podemos escribirla nosotros mismos o añadir las definiciones de math.h
 //#define PI 3.14159265358979323846
-#define _USE_MATH_DEFINES
+
+// Las definiciones se deben hacer antes de incluir la libreria de esta forma las definiciones estan listas para el preprocesamiento de la libreria
+#define _USE_MATH_DEFINES 
 #include <math.h> 
-
-
-
 
 int main() {
 

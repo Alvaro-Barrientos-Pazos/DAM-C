@@ -8,15 +8,22 @@
 
 #include <stdio.h>
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 int main() {  
 
-        System.out.println("Introduce el número de grados que tiene un angulo?");
-        double gAngle = sc.nextDouble();
-        
-        double modAngle = gAngle%360;
-        double rAngle   = Math.PI/180 * modAngle;
+    const short MAX_DEGREES = 360;
+    //const double PI = 3.14159265358979323846; // Si no queremos usar una libreria solo para sacar el valor de PI
 
-        System.out.printf("%.2f° son %.2frad\n",modAngle,rAngle);
+    double gAngle = 0.0;
+    
+    printf("Introduce el número de grados del angulo: ");
+    scanf("%lf",&gAngle);
+    
+    double modAngle = fmod(gAngle,MAX_DEGREES);
+    double rAngle   = M_PI/180 * modAngle;
+
+    printf("%.2f° son %.2frad\n",modAngle,rAngle);
         
-    }
 }
