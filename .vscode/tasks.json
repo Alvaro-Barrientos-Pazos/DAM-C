@@ -32,6 +32,7 @@
                 "-g",
                 "${file}",
                 "-o",
+                "-std=gnu99", // Se supone que fuerza a usar C99
                 "${workspaceFolder}/bin/${fileBasenameNoExtension}"
             ],
             "options": {
